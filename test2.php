@@ -22,7 +22,7 @@
                 <div class="header__inner">
                     <div class="header__logo"><acronym title="Проект студента ФКН Кальченко Дмитрия Алексеевича ">CandyShop</acronym></div>
                     <nav class="nav">
-                    <a class="nav__link" href="addcandy.php">Добавить сладость</a>
+                        <a class="nav__link" href="addcandy.php">Добавить сладость</a>
                         <a class="nav__link" href="addfirm.php">Добавить фирму</a>
                         <a class="nav__link" href="candylist.php">Список сладостей</a>
                         <a class="nav__link" href="firmlist.php">Cписок фирм</a>
@@ -76,7 +76,7 @@
                         </tr>
                         <?php 
                             $link = mysqli_connect($host, $user, $password, $database) or die("Ошибка " . mysqli_error($link));
-                            $sql = "SELECT id, name, price FROM `candys`" ;
+                            $sql = "SELECT id, name, price FROM `candys` ORDER BY id" ;
 
                             $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link));
                             $rows1 = mysqli_num_rows($result);
@@ -87,9 +87,9 @@
                                 for ($j = 0 ; $j < 1 ; ++$j){
                                     echo "<td>$row[1] -  $row[2] р/кг</td>"; 
                                     echo "<td> <div class='inp-group'>";
-                                    echo "<input type='text' name='quant' value='0' class='quant form-control' data-step='1' data-price=$row[2] data-min='0' />";
+                                    echo "<input type='text' name='quant[]' value='0' class='quant form-control' data-step='1' data-price=$row[2] data-min='0' >";
                                     echo "</div></td>";
-                                    echo "<td class='price'>0</td>";
+                                    echo "<td><input type='text' name='price[]' value='0' class='price'></td>";
                                 }   
                                 echo "</tr>";
                             } 
@@ -100,8 +100,7 @@
 
 
                         </table>
-                        <p class="text-center result">Итого:<br /><span class="val">0</span> руб.</p>
-                    
+                        <p class="text-center result">Итого:<br /><input type="text" class="summ" name="summ" value="0"> руб.</p>
                         <div class="groupa"> 
                             
                             <center><button type="submit" name="reg">Добавить</button></center>
@@ -124,31 +123,6 @@
 <script>
 
 /*калькулятор*/
-    /*Обрабатываем нажатия на кнопки + и - */
-    $('.minpl').click(function() {
-    /*Находим input*/
-        $input = $(this).parent().find('.quant');
-        var qty = Number($input.val());
-        /*На случай, если количество не удалось определить (например, пользователь мог оставить поле пустым)*/
-        if (isNaN(qty)) qty = 0;
-            if ($(this).hasClass('plus')) {
-                if (qty == 0) {
-                    qty = $input.data('min');
-                } else {
-                qty += $input.data('step');
-            }
-        } else {
-            qty -= $input.data('step');
-        }
-        var min = $input.data('min');
-        if (qty >= min) {
-            $input.val(qty).trigger('input');
-        } else {
-            $input.val(0).trigger('input');
-        }
-        /*Передаем функции подсчета, обновления*/
-        updateCalc($input);
-    });
     /*Обрабатываем ввод с клавиатуры */
     $('.quant').change(function() {
         var qty = $(this).val();
@@ -171,12 +145,13 @@
     function updateCalc($input){
         var qty = Number($input.val());
         if (isNaN(qty)) qty = 0;
-        $input.parents('.t-row').find('.price').text(qty * $input.data('price')/$input.data('step'));
+        $input.parents('.t-row').find('.price').val(qty * $input.data('price')/$input.data('step'));
         var itog = 0;
         $input.parents('.calc').find('.price').each(function(){
-            itog += parseInt($(this).text());
+            itog += parseInt($(this).val());
         });
-        $input.parents('.calc').next().find('.val').text(itog);
+        $input.parents('.calc').next().find('.summ').val(itog);
+        
     }
 
 </script>
