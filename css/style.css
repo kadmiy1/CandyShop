@@ -1,3 +1,13 @@
+.inp-group {position: relative;padding-right: 20px;display: block;}
+.inp-group .quant {border: 1px solid #636363;box-sizing:border-box;}
+.inp-group .minpl {position: absolute;height: 50%;box-sizing: border-box;right: 0px;display: block;text-align: center;width: 20px;line-height: 18px;background: #3d5354;color: #079de6;cursor: pointer;border: 1px solid #636363;}
+.inp-group .minpl:hover {background:#354455;}
+.inp-group .plus {top: 0px}
+.inp-group .minus {bottom: 0px}
+
+
+
+
 body{
     margin: 0;
     font-family: 'Open Sans', sans-serif;
