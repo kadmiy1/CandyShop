@@ -1,0 +1,358 @@
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+
+
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+/* Intro*/
+.intro{
+    width: 100%;
+    height: 100vh;
+    background: url("../img/img1.jpg") center no-repeat;
+    background-size: cover;
+}
+/*Container*/
+.container{
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+
+}
+
+/* Header */
+.header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+
+}
+
+.header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo{
+    font-size: 42px;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-weight: 100;
+    color: #696969;
+
+}
+
+/* Nav */
+.nav{
+    padding-top: 30px;
+    font-size:  12px;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.nav__link{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+    position: relative;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.1s linear;
+}
+.nav__link:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    display: none;
+
+    background-color: #bd8e17;
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+    left:  0;
+    z-index: 1;
+
+    transition: opacity 0.1s linear;
+}
+.nav__link:hover{
+    color: #696969;
+
+}
+
+
+/* Registration */
+.block{
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid black;
+    width: 1300px;
+    height: 680px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.85);
+    position: relative;
+    top: 100px;
+    overflow: auto;
+}
+
+.cont{
+    color: black;
+    width: 550px;
+    height: 300px;
+    top: 200px;
+    font-size: 12px;
+}
+
+.rega{
+    text-align: center;
+    color: black;
+    width: 450px;
+    height: 450px;
+    top: 100px;
+    border-radius: 25px;
+}
+.zak{
+    text-align: center;
+    color: black;
+    width: 680px;
+    height: 600px;
+    top: 100px;
+    border-radius: 25px;
+}
+
+.autha{
+    text-align: center;
+    color: black;
+    width: 450px;
+    height: 320px;
+    top: 180px;
+}
+
+.group{
+
+    margin: 10px;
+    padding: 5px;
+}
+
+label{
+    padding-left: 10px;
+}
+input{
+    margin-top: 10px;
+    height: 40px;
+    width: 300px;
+    border-radius: 20px/20px;
+    border:none;
+    padding-left: 15px;
+    font-style: 18px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.85);
+}
+input:focus{
+    border: 2px solid #2eeeff;
+}
+button{
+    cursor: pointer;
+    padding: 5px 15px;
+    height: 28px;
+    border: 1px solid black;
+    text-transform: uppercase;
+    font-size: 12px;
+    background: none;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+button:hover{
+    color: #bd8e17;
+}
+
+.inputadd{
+    width: 75px;
+}
+
+.delrow{
+    width: 20px;
+    height: 20px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.butadd{
+    width: 20px;
+    height: 20px;
+    /*border-radius: px;*/
+    text-align: center;
+}
+
+
+.butreg{
+    padding-top: 50px;
+    width: 300px;
+}
+
+.groupa{
+    margin-top: 50px;
+}
+
+
+/*text*/
+.text{
+    color: black;
+    text-align: center;
+    font-size: 13px;
+}
+
+.selecter{
+    margin: 10px;
+    padding: 5px;
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+input, textarea {
+      outline:none;
+}
+
+.serva1{
+    color: black;
+    width: 900px;
+    height: 830px;
+    margin-right: 5px;
+}
+.store1{
+    color: black;
+    width: 900px;
+    height: 830px;
+    margin-right: 5px;
+}
+
+.serva2{
+    color: black;
+    width: 600px;
+    height: 830px;
+    margin-left: 5px;
+}
+.store2{
+    color: black;
+    width: 600px;
+    height: 830px;
+    margin-right: 5px;
+}
+
+.both{
+    display: flex;
+}
+
+select {
+    background: transparent;
+    display: block;
+    height: 40px;
+    width: 300px;
+    border-radius: 20px/20px;
+    border:none;
+    padding-left: 15px;
+    font-style: 18px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.85);
+    line-height: 1.4;
+    font-weight: normal;
+    padding: 7px 10px 7px 10px;
+    height: 36px;
+    vertical-align: top;
+    outline: 0;
+}
+.quit{
+    width: 490px;
+    height: 650px;
+    text-align: left;
+    color: black;
+    top: 180px;
+}
+
+.tt{
+    text-align: center;
+}
+
+
+
+.quit input{
+    margin-top: 10px;
+    padding-left: 15px;
+    font-style: 18px;
+}
+
+#FIO{
+    margin-left: 45px;
+}
+
+#position{
+    margin-left: 10px;
+}
+
+#telf{
+    margin-left: 25px;
+}
+#email{
+    margin-left: 0px;
+}
+#root{
+    margin-left: 35px;
+}
+
+.groups{
+    text-align: center;
+}
+
+
+/*Table*/
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: separate;
+  border: 3px solid gray;
+  table-layout: auto;
+}
+
+th, td {
+    padding: 4px;
+    padding-right: 15px;
+    text-align: center;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black; 
+}
+th{
+    padding: 10px 15px 10px 0px;
+
+}
+
+/*form_view*/
+.view1{
+    display: none;
+}
+.view2{
+    display: none;
+}
+.view3{
+    display: none;
+}
+.view4{
+    display: none;
+}
