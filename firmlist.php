@@ -22,12 +22,12 @@
 
                      <nav class="nav">
                     
-                        <a class="nav__link" href="registration.php">Регистрация</a>
-                        <a class="nav__link" href="authorization.php">Авторизация</a>
-                        <a class="nav__link" href="addcandy.php">Добавить сладость</a>
+                     <a class="nav__link" href="addcandy.php">Добавить сладость</a>
                         <a class="nav__link" href="addfirm.php">Добавить фирму</a>
                         <a class="nav__link" href="candylist.php">Список сладостей</a>
                         <a class="nav__link" href="firmlist.php">Cписок фирм</a>
+                        <a class="nav__link" href="registration.php">Регистрация</a>
+                        <a class="nav__link" href="authorization.php">Авторизация</a>
                     </nav>
                 </div>
             </div>
